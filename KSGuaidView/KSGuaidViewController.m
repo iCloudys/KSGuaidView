@@ -107,7 +107,9 @@ UICollectionViewDelegateFlowLayout>
 
     self.pageControl.currentPage = lroundf(current);
     
-    self.hiddenBtn.hidden = self.imageNames.count - 1 != current;
+    NSString* lastImageName = self.imageNames.lastObject;
+
+    self.hiddenBtn.hidden = [lastImageName isEqualToString:kLastNullImageName] || self.imageNames.count - 1 != current ;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

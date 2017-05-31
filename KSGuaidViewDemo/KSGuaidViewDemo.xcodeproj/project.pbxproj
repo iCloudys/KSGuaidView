@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */; };
 		2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */; };
+		2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */; };
+		2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */; };
 		2CC324981ED55C53006EC91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324971ED55C53006EC91E /* main.m */; };
 		2CC3249B1ED55C53006EC91E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3249A1ED55C53006EC91E /* AppDelegate.m */; };
 		2CC3249E1ED55C53006EC91E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3249D1ED55C53006EC91E /* ViewController.m */; };
@@ -23,6 +25,8 @@
 		2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Guaid.h"; sourceTree = "<group>"; };
 		2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Guaid.m"; sourceTree = "<group>"; };
 		2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KSGuaidProperty.plist; sourceTree = "<group>"; };
+		2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143315.gif"; sourceTree = "<group>"; };
+		2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143634.gif"; sourceTree = "<group>"; };
 		2CC324931ED55C53006EC91E /* KSGuaidViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSGuaidViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC324971ED55C53006EC91E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CC324991ED55C53006EC91E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,9 +54,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C98A47A1EDE9C39003E5A32 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */,
+				2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */,
+			);
+			name = Gif;
+			path = ../Gif;
+			sourceTree = "<group>";
+		};
 		2CC3248A1ED55C53006EC91E = {
 			isa = PBXGroup;
 			children = (
+				2C98A47A1EDE9C39003E5A32 /* Gif */,
 				2CC324AD1ED55C96006EC91E /* KSGuaidView */,
 				2CC324951ED55C53006EC91E /* KSGuaidViewDemo */,
 				2CC324941ED55C53006EC91E /* Products */,
@@ -168,6 +183,8 @@
 				2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */,
 				2CC324A61ED55C53006EC91E /* LaunchScreen.storyboard in Resources */,
 				2CC324A31ED55C53006EC91E /* Assets.xcassets in Resources */,
+				2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */,
+				2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */,
 				2CC324A11ED55C53006EC91E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

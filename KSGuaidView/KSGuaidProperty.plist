@@ -8,6 +8,7 @@
 		<string>guid02</string>
 		<string>guid03</string>
 		<string>guid04</string>
+		<string>kLastNullImageName</string>
 	</array>
 	<key>kHiddenBtnImageName</key>
 	<string>hidden</string>
