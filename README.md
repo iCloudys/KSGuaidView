@@ -6,7 +6,7 @@
  * ```kImageNamesArray```
 <br/>
 
-<font size=12>
+<font color=gray size=72>
     图片数组的Key,值是一个NSArray<br/> 
     里面包含了要显示新特性的图片的名字，<br/>
     这些图片需要添加在Assets.xcassets目录内。<br/><br/>
