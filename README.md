@@ -1,11 +1,13 @@
 # App新特性页面
-使用方法很简单，直接把KSGuaidView文件夹拖到工程然后稍微修改一下文件夹内的```KSGuaidProperty.plist```内容即可<br>
+使用方法很简单，直接把KSGuaidView文件夹拖到工程,<br/>然后稍微修改一下文件夹内的```KSGuaidProperty.plist```内容即可<br>
 <br/>
 
 ## KSGuaidProperty.plist文件介绍:<br/><br/>
  ```kImageNamesArray```
 <br/>
-图片数组的Key,值是一个NSArray 里面包含了要显示新特性的图片的名字，这些图片需要添加在Assets.xcassets目录内。<br/><br/>
+    图片数组的Key,值是一个NSArray<br/> 
+    里面包含了要显示新特性的图片的名字，<br/>
+    这些图片需要添加在Assets.xcassets目录内。<br/><br/>
  ```kLastNullImageName```
 <br/>
 如果要实现最后一张图片滑动去除的效果(动图二),需要在上一个key里面的数组最后添加这个key作为最后一张图片的name。<br/>
