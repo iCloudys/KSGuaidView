@@ -3,7 +3,7 @@
 <br/>
 
 ## KSGuaidProperty.plist文件介绍:<br/><br/>
-### ```kImageNamesArray```
+ ```kImageNamesArray```
 <br/>
 图片数组的Key,值是一个NSArray 里面包含了要显示新特性的图片的名字，这些图片需要添加在Assets.xcassets目录内。<br/><br/>
 ### ```kLastNullImageName```
