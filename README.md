@@ -1,7 +1,7 @@
 # App新特性页面
 使用方法很简单，直接把KSGuaidView文件夹拖到工程,<br/>然后稍微修改一下文件夹内的```KSGuaidProperty.plist```内容即可<br>
 <br/>
-
+--------- 
 ## KSGuaidProperty.plist文件介绍:<br/><br/>
  * ```kImageNamesArray```
 <br/>
