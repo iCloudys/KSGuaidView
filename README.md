@@ -1,12 +1,14 @@
 # App新特性页面
 <br/>
-<span id=pic1>
+<span id="pic1">
 
 ![图一](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143315.gif)<br/><br/>
 
 </span>
+<span id="pic2">
 
 ![图二](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143634.gif)<br/><br/>
+</span>
 
 使用方法很简单，直接把KSGuaidView文件夹拖到工程,<br/>然后稍微修改一下文件夹内的```KSGuaidProperty.plist```内容即可<br>
 <br/>
@@ -23,7 +25,7 @@
  
 <br/>
 
-         如果要实现最后一张图片滑动去除的效果(动图二),<br/>
+         如果要实现最后一张图片滑动去除的效果[如图二](#pic2),<br/>
          需要在上一个key里面的数组最后添加这个key作为最后一张图片的name。<br/>
          注意:如果用这种方式退出，是不会显示"立即体验"类似的按钮。<br/><br/>
 
