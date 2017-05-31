@@ -12,24 +12,30 @@
 #import <objc/runtime.h>
 
 const char* kGuaidWindowKey = "kGuaidWindowKey";
+NSString * const kLastVersionKey = @"kLastVersionKey";
 
 @implementation AppDelegate (Guaid)
 
 + (void)load{
 
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        Method originMethod = class_getInstanceMethod(self.class, @selector(application:didFinishLaunchingWithOptions:));
-        Method customMethod = class_getInstanceMethod(self.class, @selector(guaid_application:didFinishLaunchingWithOptions:));
+        NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:kLastVersionKey];
+        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        
+        if ([curtVersion compare:lastVersion] == NSOrderedDescending) {
+            Method originMethod = class_getInstanceMethod(self.class, @selector(application:didFinishLaunchingWithOptions:));
+            Method customMethod = class_getInstanceMethod(self.class, @selector(guaid_application:didFinishLaunchingWithOptions:));
+            
+            method_exchangeImplementations(originMethod, customMethod);
 
-        method_exchangeImplementations(originMethod, customMethod);
+        }
     });
 }
 
 - (BOOL)guaid_application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    printf("%s\n",__func__);
     
     self.guaidWindow = [[UIWindow alloc] init];
     self.guaidWindow.frame = self.guaidWindow.screen.bounds;
@@ -42,6 +48,10 @@ const char* kGuaidWindowKey = "kGuaidWindowKey";
     __weak typeof(self) weakSelf = self;
     
     vc.shouldHidden = ^{
+        
+        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        [[NSUserDefaults standardUserDefaults] setObject:curtVersion forKey:kLastVersionKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
         [weakSelf.guaidWindow resignKeyWindow];
         

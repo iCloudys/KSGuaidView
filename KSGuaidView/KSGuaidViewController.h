@@ -17,3 +17,10 @@
 @end
 
 UIKIT_EXTERN NSString * const kLastNullImageName;
+
+UIKIT_EXTERN NSString * const kImageNamesArray;
+
+UIKIT_EXTERN NSString * const kHiddenBtnImageName;
+
+UIKIT_EXTERN NSString * const kHiddenBtnCenter;
+

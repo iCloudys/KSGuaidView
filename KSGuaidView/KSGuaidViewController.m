@@ -37,9 +37,7 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)setupSubviews{
     
-    
-    
-    self.imageNames = self.property[@"imageNames"];
+    self.imageNames = self.property[kImageNamesArray];
     
     self.view.backgroundColor = [UIColor clearColor];
     
@@ -65,7 +63,7 @@ UICollectionViewDelegateFlowLayout>
     self.pageControl.numberOfPages = self.imageNames.count;
     [self.view addSubview:self.pageControl];
     
-    NSString* hiddenBtnImageName = self.property[@"hiddenBtnImageName"];
+    NSString* hiddenBtnImageName = self.property[kHiddenBtnImageName];
     
     self.hiddenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.hiddenBtn.hidden = YES;
@@ -83,7 +81,7 @@ UICollectionViewDelegateFlowLayout>
                                         CGRectGetHeight(self.view.frame) - size.height,
                                         size.width, size.height);
     
-    NSString* centerStr = self.property[@"hiddenBtnCenter"];
+    NSString* centerStr = self.property[kHiddenBtnCenter];
     CGPoint point = CGPointFromString(centerStr);
     
     self.hiddenBtn.center = CGPointMake(CGRectGetWidth(self.view.frame) * point.x,
@@ -133,10 +131,17 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)dealloc{
-    NSLog(@"%s",__func__);
+
 }
 
 
 @end
 
 NSString * const kLastNullImageName = @"kLastNullImageName";
+
+NSString * const kImageNamesArray = @"kImageNamesArray";
+
+NSString * const kHiddenBtnImageName = @"kHiddenBtnImageName";
+
+NSString * const kHiddenBtnCenter = @"kHiddenBtnCenter";
+
