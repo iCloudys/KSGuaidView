@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */; };
+		2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */; };
 		2CC324981ED55C53006EC91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324971ED55C53006EC91E /* main.m */; };
 		2CC3249B1ED55C53006EC91E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3249A1ED55C53006EC91E /* AppDelegate.m */; };
 		2CC3249E1ED55C53006EC91E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3249D1ED55C53006EC91E /* ViewController.m */; };
 		2CC324A11ED55C53006EC91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3249F1ED55C53006EC91E /* Main.storyboard */; };
 		2CC324A31ED55C53006EC91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC324A21ED55C53006EC91E /* Assets.xcassets */; };
 		2CC324A61ED55C53006EC91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC324A41ED55C53006EC91E /* LaunchScreen.storyboard */; };
-		2CC324B01ED55D05006EC91E /* KSGuaidView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324AF1ED55D05006EC91E /* KSGuaidView.m */; };
-		2CC324B31ED55D37006EC91E /* UIViewController+KSGuaidView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324B21ED55D37006EC91E /* UIViewController+KSGuaidView.m */; };
 		2CC324B61ED56255006EC91E /* KSGuaidViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324B51ED56255006EC91E /* KSGuaidViewCell.m */; };
+		2CC324B91ED5790D006EC91E /* KSGuaidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324B81ED5790D006EC91E /* KSGuaidViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Guaid.h"; sourceTree = "<group>"; };
+		2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Guaid.m"; sourceTree = "<group>"; };
+		2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KSGuaidProperty.plist; sourceTree = "<group>"; };
 		2CC324931ED55C53006EC91E /* KSGuaidViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSGuaidViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC324971ED55C53006EC91E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CC324991ED55C53006EC91E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,12 +33,10 @@
 		2CC324A21ED55C53006EC91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CC324A51ED55C53006EC91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CC324A71ED55C53006EC91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CC324AE1ED55D05006EC91E /* KSGuaidView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSGuaidView.h; sourceTree = "<group>"; };
-		2CC324AF1ED55D05006EC91E /* KSGuaidView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSGuaidView.m; sourceTree = "<group>"; };
-		2CC324B11ED55D37006EC91E /* UIViewController+KSGuaidView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KSGuaidView.h"; sourceTree = "<group>"; };
-		2CC324B21ED55D37006EC91E /* UIViewController+KSGuaidView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KSGuaidView.m"; sourceTree = "<group>"; };
 		2CC324B41ED56255006EC91E /* KSGuaidViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSGuaidViewCell.h; sourceTree = "<group>"; };
 		2CC324B51ED56255006EC91E /* KSGuaidViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSGuaidViewCell.m; sourceTree = "<group>"; };
+		2CC324B71ED5790D006EC91E /* KSGuaidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSGuaidViewController.h; sourceTree = "<group>"; };
+		2CC324B81ED5790D006EC91E /* KSGuaidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSGuaidViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +94,13 @@
 		2CC324AD1ED55C96006EC91E /* KSGuaidView */ = {
 			isa = PBXGroup;
 			children = (
-				2CC324AE1ED55D05006EC91E /* KSGuaidView.h */,
-				2CC324AF1ED55D05006EC91E /* KSGuaidView.m */,
 				2CC324B41ED56255006EC91E /* KSGuaidViewCell.h */,
 				2CC324B51ED56255006EC91E /* KSGuaidViewCell.m */,
-				2CC324B11ED55D37006EC91E /* UIViewController+KSGuaidView.h */,
-				2CC324B21ED55D37006EC91E /* UIViewController+KSGuaidView.m */,
+				2CC324B71ED5790D006EC91E /* KSGuaidViewController.h */,
+				2CC324B81ED5790D006EC91E /* KSGuaidViewController.m */,
+				2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */,
+				2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */,
+				2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */,
 			);
 			name = KSGuaidView;
 			path = ../KSGuaidView;
@@ -162,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */,
 				2CC324A61ED55C53006EC91E /* LaunchScreen.storyboard in Resources */,
 				2CC324A31ED55C53006EC91E /* Assets.xcassets in Resources */,
 				2CC324A11ED55C53006EC91E /* Main.storyboard in Resources */,
@@ -176,11 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC3249E1ED55C53006EC91E /* ViewController.m in Sources */,
+				2CC324B91ED5790D006EC91E /* KSGuaidViewController.m in Sources */,
 				2CC3249B1ED55C53006EC91E /* AppDelegate.m in Sources */,
 				2CC324981ED55C53006EC91E /* main.m in Sources */,
-				2CC324B01ED55D05006EC91E /* KSGuaidView.m in Sources */,
-				2CC324B31ED55D37006EC91E /* UIViewController+KSGuaidView.m in Sources */,
 				2CC324B61ED56255006EC91E /* KSGuaidViewCell.m in Sources */,
+				2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anfou.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -319,6 +324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anfou.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

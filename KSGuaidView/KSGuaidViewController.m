@@ -1,50 +1,47 @@
 //
-//  KSGuaidView.m
+//  KSGuaidViewController.m
 //  KSGuaidViewDemo
 //
 //  Created by Mr.kong on 2017/5/24.
 //  Copyright © 2017年 Bilibili. All rights reserved.
 //
 
-#import "KSGuaidView.h"
+#import "KSGuaidViewController.h"
+
 #import "KSGuaidViewCell.h"
 
-@interface KSGuaidView ()<
+@interface KSGuaidViewController ()<
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UIPageControl* pageControl;
 @property (nonatomic, strong) UICollectionView* collectionView;
-@property (nonatomic, assign) UIWindowLevel originLevel;
+
+@property (nonatomic, strong) UIButton* hiddenBtn;
+
+@property (nonatomic, strong) NSDictionary* property;
 
 @end
 
-@implementation KSGuaidView
+@implementation KSGuaidViewController
 
-
-- (instancetype)init
-{
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
-    if (self) {
-        [self setupSubviews];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
-    if (self) {
-        [self setupSubviews];
-    }
-    return self;
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"KSGuaidProperty.plist" ofType:nil];
+    
+    self.property = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    [self setupSubviews];
 }
 
 - (void)setupSubviews{
     
-    self.imageNames = @[@"guid01",@"guid02",@"guid03",@"guid04"];
     
-    self.backgroundColor = [UIColor clearColor];
+    
+    self.imageNames = self.property[@"imageNames"];
+    
+    self.view.backgroundColor = [UIColor clearColor];
     
     UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumLineSpacing = 0;
@@ -57,26 +54,40 @@ UICollectionViewDelegateFlowLayout>
     self.collectionView.pagingEnabled = YES;
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
-    self.collectionView.backgroundColor = self.backgroundColor;
+    self.collectionView.backgroundColor = self.view.backgroundColor;
     [self.collectionView registerClass:[KSGuaidViewCell class] forCellWithReuseIdentifier:KSGuaidViewCellID];
     
-    [self addSubview:self.collectionView];
+    [self.view addSubview:self.collectionView];
     
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.userInteractionEnabled = NO;
     self.pageControl.hidesForSinglePage = YES;
     self.pageControl.numberOfPages = self.imageNames.count;
-    [self addSubview:self.pageControl];
+    [self.view addSubview:self.pageControl];
+    
+    NSString* hiddenBtnImageName = self.property[@"hiddenBtnImageName"];
+    
+    self.hiddenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.hiddenBtn.hidden = YES;
+    [self.hiddenBtn setImage:[UIImage imageNamed:hiddenBtnImageName] forState:UIControlStateNormal];
+    [self.hiddenBtn addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
+    [self.hiddenBtn sizeToFit];
+    [self.view addSubview:self.hiddenBtn];
 }
 
-- (void)layoutSubviews{
-    [super layoutSubviews];
-    
-    self.collectionView.frame = self.bounds;
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.collectionView.frame = self.view.bounds;
     CGSize size = [self.pageControl sizeForNumberOfPages:self.imageNames.count];
-    self.pageControl.frame = CGRectMake((CGRectGetWidth(self.frame) - size.width) / 2,
-                                        CGRectGetHeight(self.frame) - size.height,
+    self.pageControl.frame = CGRectMake((CGRectGetWidth(self.view.frame) - size.width) / 2,
+                                        CGRectGetHeight(self.view.frame) - size.height,
                                         size.width, size.height);
+    
+    NSString* centerStr = self.property[@"hiddenBtnCenter"];
+    CGPoint point = CGPointFromString(centerStr);
+    
+    self.hiddenBtn.center = CGPointMake(CGRectGetWidth(self.view.frame) * point.x,
+                                        CGRectGetHeight(self.view.frame) * point.y);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -94,39 +105,37 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    long current = lroundf(scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame));
-    self.pageControl.currentPage = current;
+    long current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
+
+    self.pageControl.currentPage = lroundf(current);
+    
+    self.hiddenBtn.hidden = self.imageNames.count - 1 != current;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSString* lastImageName = self.imageNames.lastObject;
+
     if (![lastImageName isEqualToString:kLastNullImageName]) {
         return;
     }
-    
+
     int current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
     if (current == self.imageNames.count - 1) {
         [self hide];
     }
 }
 
-/// MARK:- 展示
-+ (void)show{
-    KSGuaidView* guaidView = [[KSGuaidView alloc] init];
-    UIWindow* keyWindow = [UIApplication sharedApplication].keyWindow;
-    guaidView.originLevel = keyWindow.windowLevel;
-    keyWindow.windowLevel = UIWindowLevelAlert;
-    [keyWindow addSubview:guaidView];
-}
-
+/// MARK:- 隐藏
 - (void)hide{
-    [UIApplication sharedApplication].keyWindow.windowLevel = self.originLevel;
-    [self removeFromSuperview];
+    if (self.shouldHidden) {
+        self.shouldHidden();
+    }
 }
 
 - (void)dealloc{
     NSLog(@"%s",__func__);
 }
+
 
 @end
 

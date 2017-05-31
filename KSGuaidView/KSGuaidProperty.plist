@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>imageNames</key>
+	<array>
+		<string>guid01</string>
+		<string>guid02</string>
+		<string>guid03</string>
+		<string>guid04</string>
+		<string>kLastNullImageName</string>
+	</array>
+	<key>hiddenBtnImageName</key>
+	<string>hidden</string>
+	<key>hiddenBtnCenter</key>
+	<string>{0.5,0.85}</string>
+</dict>
+</plist>

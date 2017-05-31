@@ -1,5 +1,5 @@
 //
-//  KSGuaidView.h
+//  KSGuaidViewController.h
 //  KSGuaidViewDemo
 //
 //  Created by Mr.kong on 2017/5/24.
@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KSGuaidView : UIView
+@interface KSGuaidViewController : UIViewController
 
 @property (nonatomic, strong) NSArray<NSString*>* imageNames;
 
-+ (void)show;
+@property (nonatomic, copy) dispatch_block_t shouldHidden;
 
 @end
-
 
 UIKIT_EXTERN NSString * const kLastNullImageName;

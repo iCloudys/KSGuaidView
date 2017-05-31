@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    printf("%s\n",__func__);
 }
-
-
 
 @end
