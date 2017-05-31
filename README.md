@@ -1,6 +1,6 @@
 # App新特性页面
 <br/>
-<span id="pic1">
+<span id=pic1>
 
 ![图一](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143315.gif)<br/><br/>
 
