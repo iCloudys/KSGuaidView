@@ -4,7 +4,7 @@
 
 ![图一](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143315.gif)<br/><br/>
 
-<span/>
+</span>
 
 ![图二](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143634.gif)<br/><br/>
 
