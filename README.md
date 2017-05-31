@@ -16,6 +16,6 @@
 <br/>
 "立即体验"按钮的图片名称，如果想在最后一张图片上添加一个体验按钮(如图一),则需要指定这个图片的名字，按钮大小会跟随图片的大小设定。<br/>
 如果在```kImageNamesArray```最后添加了```kLastNullImageName```，即使指定了```kHiddenBtnImageName```不过也不会起作用。<br/><br/>
-* ```kHiddenBtnCenter```
+*  ```kHiddenBtnCenter```
 <br/>
 "立即体验"按钮的相对屏幕的位置，value是```{x,y}```字符串类型的point。x,y的取值范围为[0,1],```{0.5,0.5}```是屏幕中心。
