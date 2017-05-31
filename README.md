@@ -10,6 +10,7 @@
     里面包含了要显示新特性的图片的名字，<br/>
     这些图片需要添加在Assets.xcassets目录内。<br/><br/>
  </font>
+ 
  * ```kLastNullImageName```
  
 <br/>
@@ -18,6 +19,7 @@
 需要在上一个key里面的数组最后添加这个key作为最后一张图片的name。<br/>
 注意:如果用这种方式退出，是不会显示"立即体验"类似的按钮。<br/><br/>
  </font>
+ 
 * ``` kHiddenBtnImageName```
 
 <br/>
@@ -27,6 +29,7 @@
 如果在`kImageNamesArray`最后添加了 `kLastNullImageName` ，<br/>
 即使指定了`kHiddenBtnImageName`不过也不会起作用。<br/><br/>
  </font>
+ 
 *  ```kHiddenBtnCenter```
 
 <br/>
