@@ -112,6 +112,10 @@ UICollectionViewDelegateFlowLayout>
     self.hiddenBtn.hidden = [lastImageName isEqualToString:kLastNullImageName] || self.imageNames.count - 1 != current ;
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     NSString* lastImageName = self.imageNames.lastObject;
 
