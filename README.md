@@ -1,8 +1,8 @@
 # App新特性页面
 <br/>
-
+<span id="pic1">
 ![图一](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143315.gif)<br/><br/>
-
+<span/>
 ![图二](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143634.gif)<br/><br/>
 
 使用方法很简单，直接把KSGuaidView文件夹拖到工程,<br/>然后稍微修改一下文件夹内的```KSGuaidProperty.plist```内容即可<br>
@@ -29,7 +29,7 @@
 
 <br/>
 
-         "立即体验"按钮的图片名称，如果想在最后一张图片上添加一个体验按钮(如图一),<br/>
+         "立即体验"按钮的图片名称，如果想在最后一张图片上添加一个体验按钮 [如图一](#pic1),<br/>
          则需要指定这个图片的名字，按钮大小会跟随图片的大小设定。<br/>
          如果在`kImageNamesArray`最后添加了 `kLastNullImageName` ，<br/>
          即使指定了`kHiddenBtnImageName`不过也不会起作用。<br/><br/>
