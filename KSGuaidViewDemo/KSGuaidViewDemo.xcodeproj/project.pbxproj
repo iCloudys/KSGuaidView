@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E0F7281FF64AFC0007186C /* KSGuardOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0F7271FF64AFC0007186C /* KSGuardOptions.m */; };
 		2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */; };
-		2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */; };
 		2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */; };
 		2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */; };
 		2CC324981ED55C53006EC91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324971ED55C53006EC91E /* main.m */; };
@@ -22,9 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E0F7261FF64AFC0007186C /* KSGuardOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuardOptions.h; sourceTree = "<group>"; };
+		04E0F7271FF64AFC0007186C /* KSGuardOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuardOptions.m; sourceTree = "<group>"; };
 		2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Guaid.h"; sourceTree = "<group>"; };
 		2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Guaid.m"; sourceTree = "<group>"; };
-		2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KSGuaidProperty.plist; sourceTree = "<group>"; };
 		2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143315.gif"; sourceTree = "<group>"; };
 		2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143634.gif"; sourceTree = "<group>"; };
 		2CC324931ED55C53006EC91E /* KSGuaidViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSGuaidViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +116,8 @@
 				2CC324B81ED5790D006EC91E /* KSGuaidViewController.m */,
 				2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */,
 				2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */,
-				2C98A4781EDE7E9C003E5A32 /* KSGuaidProperty.plist */,
+				04E0F7261FF64AFC0007186C /* KSGuardOptions.h */,
+				04E0F7271FF64AFC0007186C /* KSGuardOptions.m */,
 			);
 			name = KSGuaidView;
 			path = ../KSGuaidView;
@@ -147,7 +149,7 @@
 		2CC3248B1ED55C53006EC91E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Bilibili;
 				TargetAttributes = {
 					2CC324921ED55C53006EC91E = {
@@ -180,7 +182,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C98A4791EDE7E9C003E5A32 /* KSGuaidProperty.plist in Resources */,
 				2CC324A61ED55C53006EC91E /* LaunchScreen.storyboard in Resources */,
 				2CC324A31ED55C53006EC91E /* Assets.xcassets in Resources */,
 				2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */,
@@ -200,6 +201,7 @@
 				2CC324B91ED5790D006EC91E /* KSGuaidViewController.m in Sources */,
 				2CC3249B1ED55C53006EC91E /* AppDelegate.m in Sources */,
 				2CC324981ED55C53006EC91E /* main.m in Sources */,
+				04E0F7281FF64AFC0007186C /* KSGuardOptions.m in Sources */,
 				2CC324B61ED56255006EC91E /* KSGuaidViewCell.m in Sources */,
 				2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */,
 			);
@@ -237,7 +239,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -245,7 +249,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -285,7 +293,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -293,7 +303,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

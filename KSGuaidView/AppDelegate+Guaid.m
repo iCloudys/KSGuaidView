@@ -8,7 +8,7 @@
 
 #import "AppDelegate+Guaid.h"
 #import "KSGuaidViewController.h"
-
+#import "KSGuardOptions.h"
 #import <objc/runtime.h>
 
 const char* kGuaidWindowKey = "kGuaidWindowKey";
@@ -18,12 +18,11 @@ NSString * const kLastVersionKey = @"kLastVersionKey";
 
 + (void)load{
 
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
         NSString* lastVersion = [[NSUserDefaults standardUserDefaults] stringForKey:kLastVersionKey];
-        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
         
         if ([curtVersion compare:lastVersion] == NSOrderedDescending) {
             Method originMethod = class_getInstanceMethod(self.class, @selector(application:didFinishLaunchingWithOptions:));
@@ -37,31 +36,37 @@ NSString * const kLastVersionKey = @"kLastVersionKey";
 
 - (BOOL)guaid_application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    BOOL ret = [self guaid_application:application didFinishLaunchingWithOptions:launchOptions];
+    
     self.guaidWindow = [[UIWindow alloc] init];
-    self.guaidWindow.frame = self.guaidWindow.screen.bounds;
+    self.guaidWindow.frame = [UIScreen mainScreen].bounds;
     self.guaidWindow.backgroundColor = [UIColor clearColor];
-    self.guaidWindow.windowLevel = UIWindowLevelStatusBar + 1;
+    self.guaidWindow.windowLevel = UIWindowLevelStatusBar;
     [self.guaidWindow makeKeyAndVisible];
     
     KSGuaidViewController* vc = [[KSGuaidViewController alloc] init];
 
     __weak typeof(self) weakSelf = self;
     
-    vc.shouldHidden = ^{
+    vc.willDismissHandler = ^{
         
-        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        NSString* curtVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
         [[NSUserDefaults standardUserDefaults] setObject:curtVersion forKey:kLastVersionKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        [weakSelf.guaidWindow resignKeyWindow];
+        [weakSelf.window makeKeyAndVisible];
         
         weakSelf.guaidWindow.hidden = YES;
+        
         weakSelf.guaidWindow = nil;
+
+        [KSGuardOptions deinit];
+        
     };
     
     self.guaidWindow.rootViewController = vc;
     
-    return [self guaid_application:application didFinishLaunchingWithOptions:launchOptions];
+    return ret;
 }
 
 - (UIWindow *)guaidWindow{

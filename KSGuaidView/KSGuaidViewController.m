@@ -7,7 +7,7 @@
 //
 
 #import "KSGuaidViewController.h"
-
+#import "KSGuardOptions.h"
 #import "KSGuaidViewCell.h"
 
 @interface KSGuaidViewController ()<
@@ -17,9 +17,7 @@ UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UIPageControl* pageControl;
 @property (nonatomic, strong) UICollectionView* collectionView;
 
-@property (nonatomic, strong) UIButton* hiddenBtn;
-
-@property (nonatomic, strong) NSDictionary* property;
+@property (nonatomic, strong) UIButton* dismissButton;
 
 @end
 
@@ -28,16 +26,10 @@ UICollectionViewDelegateFlowLayout>
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:@"KSGuaidProperty.plist" ofType:nil];
-    
-    self.property = [NSDictionary dictionaryWithContentsOfFile:path];
-    
     [self setupSubviews];
 }
 
 - (void)setupSubviews{
-    
-    self.imageNames = self.property[kImageNamesArray];
     
     self.view.backgroundColor = [UIColor clearColor];
     
@@ -60,41 +52,67 @@ UICollectionViewDelegateFlowLayout>
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.userInteractionEnabled = NO;
     self.pageControl.hidesForSinglePage = YES;
-    self.pageControl.numberOfPages = self.imageNames.count;
+    self.pageControl.numberOfPages = KSGuardGlobal.images.count;
+    self.pageControl.pageIndicatorTintColor = KSGuardGlobal.pageIndicatorTintColor;
+    self.pageControl.currentPageIndicatorTintColor = KSGuardGlobal.currentPageIndicatorTintColor;
     [self.view addSubview:self.pageControl];
     
-    NSString* hiddenBtnImageName = self.property[kHiddenBtnImageName];
-    
-    self.hiddenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.hiddenBtn.hidden = YES;
-    [self.hiddenBtn setImage:[UIImage imageNamed:hiddenBtnImageName] forState:UIControlStateNormal];
-    [self.hiddenBtn addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
-    [self.hiddenBtn sizeToFit];
-    [self.view addSubview:self.hiddenBtn];
+    if (KSGuardGlobal.shouldDismissWhenDragging == NO) {
+        NSAssert(KSGuardGlobal.dismissButtonImage, @"[KSGuardOptions global].dismissButtonImage can not be nil when [KSGuardOptions global].shouldDismissWhenDragging is NO ");
+        
+        self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.dismissButton.hidden = YES;
+        [self.dismissButton setImage:KSGuardGlobal.dismissButtonImage forState:UIControlStateNormal];
+        [self.dismissButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+        [self.dismissButton sizeToFit];
+        [self.view addSubview:self.dismissButton];
+        
+    }
 }
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    
     self.collectionView.frame = self.view.bounds;
-    CGSize size = [self.pageControl sizeForNumberOfPages:self.imageNames.count];
+    
+    CGSize size = [self.pageControl sizeForNumberOfPages:self.pageControl.numberOfPages];
+    
     self.pageControl.frame = CGRectMake((CGRectGetWidth(self.view.frame) - size.width) / 2,
                                         CGRectGetHeight(self.view.frame) - size.height,
                                         size.width, size.height);
     
-    NSString* centerStr = self.property[kHiddenBtnCenter];
-    CGPoint point = CGPointFromString(centerStr);
+//    NSString* centerStr = self.property[kHiddenBtnCenter];
+//    CGPoint point = CGPointFromString(centerStr);
     
-    self.hiddenBtn.center = CGPointMake(CGRectGetWidth(self.view.frame) * point.x,
-                                        CGRectGetHeight(self.view.frame) * point.y);
+    self.dismissButton.center = KSGuardGlobal.dismissButtonCenter;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.imageNames.count;
+    
+    if (KSGuardGlobal.shouldDismissWhenDragging) {
+        
+        return KSGuardGlobal.images.count + 1;
+        
+    }
+    
+    return KSGuardGlobal.images.count;
+    
 }
 
 - (__kindof UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
     KSGuaidViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:KSGuaidViewCellID forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:self.imageNames[indexPath.row]];
+    
+    if (indexPath.row >= KSGuardGlobal.images.count) {
+        
+        cell.imageView.image = nil;
+        
+    }else{
+       
+        cell.imageView.image = KSGuardGlobal.images[indexPath.row];
+        
+    }
+    
     return cell;
 }
 
@@ -103,13 +121,15 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
     long current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
 
     self.pageControl.currentPage = lroundf(current);
-    
-    NSString* lastImageName = self.imageNames.lastObject;
 
-    self.hiddenBtn.hidden = [lastImageName isEqualToString:kLastNullImageName] || self.imageNames.count - 1 != current ;
+    if (KSGuardGlobal.shouldDismissWhenDragging == NO) {
+        
+        self.dismissButton.hidden = KSGuardGlobal.images.count != current + 1;
+    }
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
@@ -117,37 +137,32 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSString* lastImageName = self.imageNames.lastObject;
 
-    if (![lastImageName isEqualToString:kLastNullImageName]) {
-        return;
-    }
-
-    int current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
-    if (current == self.imageNames.count - 1) {
-        [self hide];
+    if (KSGuardGlobal.shouldDismissWhenDragging == YES) {
+        int current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
+        if (current == KSGuardGlobal.images.count) {
+            [self dismiss];
+        }
     }
 }
 
 /// MARK:- 隐藏
-- (void)hide{
-    if (self.shouldHidden) {
-        self.shouldHidden();
+- (void)dismiss{
+    if (self.willDismissHandler) {
+        self.willDismissHandler();
     }
 }
 
-- (void)dealloc{
-
+- (BOOL)prefersHomeIndicatorAutoHidden{
+    return YES;
 }
 
+- (void)dealloc{
+#if DEBUG
+    NSLog(@"[DEBUG] dealloc:%@",self);
+#endif
+}
 
 @end
 
-NSString * const kLastNullImageName = @"kLastNullImageName";
-
-NSString * const kImageNamesArray = @"kImageNamesArray";
-
-NSString * const kHiddenBtnImageName = @"kHiddenBtnImageName";
-
-NSString * const kHiddenBtnCenter = @"kHiddenBtnCenter";
 

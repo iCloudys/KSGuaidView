@@ -10,17 +10,6 @@
 
 @interface KSGuaidViewController : UIViewController
 
-@property (nonatomic, strong) NSArray<NSString*>* imageNames;
-
-@property (nonatomic, copy) dispatch_block_t shouldHidden;
+@property (nonatomic, copy) dispatch_block_t willDismissHandler;
 
 @end
-
-UIKIT_EXTERN NSString * const kLastNullImageName;
-
-UIKIT_EXTERN NSString * const kImageNamesArray;
-
-UIKIT_EXTERN NSString * const kHiddenBtnImageName;
-
-UIKIT_EXTERN NSString * const kHiddenBtnCenter;
-
