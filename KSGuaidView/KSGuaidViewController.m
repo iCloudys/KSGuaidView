@@ -3,12 +3,12 @@
 //  KSGuaidViewDemo
 //
 //  Created by Mr.kong on 2017/5/24.
-//  Copyright © 2017年 Bilibili. All rights reserved.
+//  Copyright © 2017年 iCloudys. All rights reserved.
 //
 
 #import "KSGuaidViewController.h"
-#import "KSGuardOptions.h"
 #import "KSGuaidViewCell.h"
+#import "KSGuaidViewManager.h"
 
 @interface KSGuaidViewController ()<
 UICollectionViewDataSource,
@@ -52,17 +52,17 @@ UICollectionViewDelegateFlowLayout>
     self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.userInteractionEnabled = NO;
     self.pageControl.hidesForSinglePage = YES;
-    self.pageControl.numberOfPages = KSGuardGlobal.images.count;
-    self.pageControl.pageIndicatorTintColor = KSGuardGlobal.pageIndicatorTintColor;
-    self.pageControl.currentPageIndicatorTintColor = KSGuardGlobal.currentPageIndicatorTintColor;
+    self.pageControl.numberOfPages = KSGuaidManager.images.count;
+    self.pageControl.pageIndicatorTintColor = KSGuaidManager.pageIndicatorTintColor;
+    self.pageControl.currentPageIndicatorTintColor = KSGuaidManager.currentPageIndicatorTintColor;
     [self.view addSubview:self.pageControl];
     
-    if (KSGuardGlobal.shouldDismissWhenDragging == NO) {
-        NSAssert(KSGuardGlobal.dismissButtonImage, @"[KSGuardOptions global].dismissButtonImage can not be nil when [KSGuardOptions global].shouldDismissWhenDragging is NO ");
+    if (KSGuaidManager.shouldDismissWhenDragging == NO) {
+        NSAssert(KSGuaidManager.dismissButtonImage, @"[KSGuaidViewManager manager].dismissButtonImage can not be nil when [KSGuaidViewManager manager].shouldDismissWhenDragging is NO ");
         
         self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.dismissButton.hidden = YES;
-        [self.dismissButton setImage:KSGuardGlobal.dismissButtonImage forState:UIControlStateNormal];
+        [self.dismissButton setImage:KSGuaidManager.dismissButtonImage forState:UIControlStateNormal];
         [self.dismissButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
         [self.dismissButton sizeToFit];
         [self.view addSubview:self.dismissButton];
@@ -84,18 +84,18 @@ UICollectionViewDelegateFlowLayout>
 //    NSString* centerStr = self.property[kHiddenBtnCenter];
 //    CGPoint point = CGPointFromString(centerStr);
     
-    self.dismissButton.center = KSGuardGlobal.dismissButtonCenter;
+    self.dismissButton.center = KSGuaidManager.dismissButtonCenter;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    if (KSGuardGlobal.shouldDismissWhenDragging) {
+    if (KSGuaidManager.shouldDismissWhenDragging) {
         
-        return KSGuardGlobal.images.count + 1;
+        return KSGuaidManager.images.count + 1;
         
     }
     
-    return KSGuardGlobal.images.count;
+    return KSGuaidManager.images.count;
     
 }
 
@@ -103,13 +103,13 @@ UICollectionViewDelegateFlowLayout>
     
     KSGuaidViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:KSGuaidViewCellID forIndexPath:indexPath];
     
-    if (indexPath.row >= KSGuardGlobal.images.count) {
+    if (indexPath.row >= KSGuaidManager.images.count) {
         
         cell.imageView.image = nil;
         
     }else{
        
-        cell.imageView.image = KSGuardGlobal.images[indexPath.row];
+        cell.imageView.image = KSGuaidManager.images[indexPath.row];
         
     }
     
@@ -126,9 +126,9 @@ UICollectionViewDelegateFlowLayout>
 
     self.pageControl.currentPage = lroundf(current);
 
-    if (KSGuardGlobal.shouldDismissWhenDragging == NO) {
+    if (KSGuaidManager.shouldDismissWhenDragging == NO) {
         
-        self.dismissButton.hidden = KSGuardGlobal.images.count != current + 1;
+        self.dismissButton.hidden = KSGuaidManager.images.count != current + 1;
     }
 }
 
@@ -138,9 +138,9 @@ UICollectionViewDelegateFlowLayout>
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-    if (KSGuardGlobal.shouldDismissWhenDragging == YES) {
+    if (KSGuaidManager.shouldDismissWhenDragging == YES) {
         int current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
-        if (current == KSGuardGlobal.images.count) {
+        if (current == KSGuaidManager.images.count) {
             [self dismiss];
         }
     }

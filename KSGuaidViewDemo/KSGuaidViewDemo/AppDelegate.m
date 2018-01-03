@@ -3,11 +3,11 @@
 //  KSGuaidViewDemo
 //
 //  Created by Mr.kong on 2017/5/24.
-//  Copyright © 2017年 Bilibili. All rights reserved.
+//  Copyright © 2017年 iCloudys. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "KSGuardOptions.h"
+#import "KSGuaidViewManager.h"
 
 @interface AppDelegate ()
 
@@ -15,21 +15,25 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    CGSize size = [UIScreen mainScreen].bounds.size;
     
-    KSGuardGlobal.images = @[[UIImage imageNamed:@"guid01"],
+    KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
                              [UIImage imageNamed:@"guid02"],
                              [UIImage imageNamed:@"guid03"],
                              [UIImage imageNamed:@"guid04"]];
     
-//    KSGuardGlobal.dismissButtonImage = [UIImage imageNamed:@"hidden"];
+    /*
+
+     CGSize size = [UIScreen mainScreen].bounds.size;
+
+     KSGuaidManager.dismissButtonImage = [UIImage imageNamed:@"hidden"];
     
-//    KSGuardGlobal.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
+    KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
+    */
     
-    [KSGuardOptions global].shouldDismissWhenDragging = YES;
+    KSGuaidManager.shouldDismissWhenDragging = YES;
+    
+    [KSGuaidManager begin];
     
     return YES;
 }

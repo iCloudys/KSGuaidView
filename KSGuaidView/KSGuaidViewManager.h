@@ -1,17 +1,19 @@
 //
-//  KSGuardOptions.h
+//  KSGuaidViewManager.h
 //  KSGuaidViewDemo
 //
-//  Created by Mac on 2017/12/29.
-//  Copyright © 2017年 Bilibili. All rights reserved.
+//  Created by Mac on 2018/1/3.
+//  Copyright © 2018年 iCloudys. All rights reserved.
 //
 
 #import <Foundation/NSObject.h>
-#import <UIKit/UIImage.h>
+#import <UIKit/UIWindow.h>
 
-#define KSGuardGlobal [KSGuardOptions global]
+#define KSGuaidManager [KSGuaidViewManager manager]
 
-@interface KSGuardOptions : NSObject
+@interface KSGuaidViewManager : NSObject
+
+@property (nonatomic, strong, readonly) UIWindow* window;
 
 @property (nonatomic, strong ) NSArray<UIImage*>* images;
 
@@ -25,8 +27,8 @@
 
 @property (nonatomic, strong) UIColor* currentPageIndicatorTintColor;
 
-+ (instancetype)global;
++ (instancetype)manager;
 
-+ (void)deinit;
+- (void)begin;
 
 @end

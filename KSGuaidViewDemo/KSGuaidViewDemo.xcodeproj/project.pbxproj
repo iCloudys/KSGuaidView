@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04E0F7281FF64AFC0007186C /* KSGuardOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E0F7271FF64AFC0007186C /* KSGuardOptions.m */; };
-		2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */; };
+		0401CDB11FFC69ED006F6793 /* KSGuaidViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401CDB01FFC69ED006F6793 /* KSGuaidViewManager.m */; };
 		2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */; };
 		2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */; };
 		2CC324981ED55C53006EC91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324971ED55C53006EC91E /* main.m */; };
@@ -22,10 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04E0F7261FF64AFC0007186C /* KSGuardOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuardOptions.h; sourceTree = "<group>"; };
-		04E0F7271FF64AFC0007186C /* KSGuardOptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuardOptions.m; sourceTree = "<group>"; };
-		2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Guaid.h"; sourceTree = "<group>"; };
-		2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Guaid.m"; sourceTree = "<group>"; };
+		0401CDAF1FFC69ED006F6793 /* KSGuaidViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGuaidViewManager.h; sourceTree = "<group>"; };
+		0401CDB01FFC69ED006F6793 /* KSGuaidViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSGuaidViewManager.m; sourceTree = "<group>"; };
 		2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143315.gif"; sourceTree = "<group>"; };
 		2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143634.gif"; sourceTree = "<group>"; };
 		2CC324931ED55C53006EC91E /* KSGuaidViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSGuaidViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,10 +111,8 @@
 				2CC324B51ED56255006EC91E /* KSGuaidViewCell.m */,
 				2CC324B71ED5790D006EC91E /* KSGuaidViewController.h */,
 				2CC324B81ED5790D006EC91E /* KSGuaidViewController.m */,
-				2C98A4751EDE73D3003E5A32 /* AppDelegate+Guaid.h */,
-				2C98A4761EDE73D3003E5A32 /* AppDelegate+Guaid.m */,
-				04E0F7261FF64AFC0007186C /* KSGuardOptions.h */,
-				04E0F7271FF64AFC0007186C /* KSGuardOptions.m */,
+				0401CDAF1FFC69ED006F6793 /* KSGuaidViewManager.h */,
+				0401CDB01FFC69ED006F6793 /* KSGuaidViewManager.m */,
 			);
 			name = KSGuaidView;
 			path = ../KSGuaidView;
@@ -150,7 +145,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = Bilibili;
+				ORGANIZATIONNAME = iCloudys;
 				TargetAttributes = {
 					2CC324921ED55C53006EC91E = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -201,9 +196,8 @@
 				2CC324B91ED5790D006EC91E /* KSGuaidViewController.m in Sources */,
 				2CC3249B1ED55C53006EC91E /* AppDelegate.m in Sources */,
 				2CC324981ED55C53006EC91E /* main.m in Sources */,
-				04E0F7281FF64AFC0007186C /* KSGuardOptions.m in Sources */,
+				0401CDB11FFC69ED006F6793 /* KSGuaidViewManager.m in Sources */,
 				2CC324B61ED56255006EC91E /* KSGuaidViewCell.m in Sources */,
-				2C98A4771EDE73D3003E5A32 /* AppDelegate+Guaid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
