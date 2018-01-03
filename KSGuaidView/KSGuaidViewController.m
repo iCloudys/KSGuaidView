@@ -81,9 +81,6 @@ UICollectionViewDelegateFlowLayout>
                                         CGRectGetHeight(self.view.frame) - size.height,
                                         size.width, size.height);
     
-//    NSString* centerStr = self.property[kHiddenBtnCenter];
-//    CGPoint point = CGPointFromString(centerStr);
-    
     self.dismissButton.center = KSGuaidManager.dismissButtonCenter;
 }
 
