@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "KSGuaidView"
-s.version      = "0.0.1"
+s.version      = "0.0.2"
 s.summary      = "App new feature page App"
 s.description  = <<-DESC
 App new feature page
