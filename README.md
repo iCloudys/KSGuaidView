@@ -24,20 +24,19 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
  
      - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-     KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
-                              [UIImage imageNamed:@"guid02"],
-                              [UIImage imageNamed:@"guid03"],
-                              [UIImage imageNamed:@"guid04"]];
+         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
+                                    [UIImage imageNamed:@"guid02"],
+                                    [UIImage imageNamed:@"guid03"],
+                                    [UIImage imageNamed:@"guid04"]];
     
-     CGSize size = [UIScreen mainScreen].bounds.size;
-     
-     KSGuaidManager.dismissButtonImage = [UIImage imageNamed:@"hidden"];
-     
-     KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
+        CGSize size = [UIScreen mainScreen].bounds.size;
+        KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
 
-    [KSGuaidManager begin];
+        KSGuaidManager.dismissButtonImage = [UIImage imageNamed:@"hidden"];
+     
+        [KSGuaidManager begin];
     
-    return YES;
+        return YES;
     
     }
 
@@ -52,10 +51,9 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
                               [UIImage imageNamed:@"guid03"],
                               [UIImage imageNamed:@"guid04"]];
     
-    KSGuaidManager.shouldDismissWhenDragging = YES;
-    
+     KSGuaidManager.shouldDismissWhenDragging = YES;
     [KSGuaidManager begin];
-    
+   
     return YES;
     
     }
