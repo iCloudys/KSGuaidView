@@ -16,21 +16,23 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
                               [UIImage imageNamed:@"guid02"],
                               [UIImage imageNamed:@"guid03"],
                               [UIImage imageNamed:@"guid04"]];
     
     /*
-
+     方式一:
+     
      CGSize size = [UIScreen mainScreen].bounds.size;
-
+     
      KSGuaidManager.dismissButtonImage = [UIImage imageNamed:@"hidden"];
+     
+     KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
+     */
     
-    KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
-    */
-    
+    //方式二:
     KSGuaidManager.shouldDismissWhenDragging = YES;
     
     [KSGuaidManager begin];

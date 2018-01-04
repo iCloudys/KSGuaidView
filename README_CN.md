@@ -1,25 +1,26 @@
-# KSGuaidView([中文版](https://www.baidu.com))
+# KSGuaidView
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 ![Pod version](http://img.shields.io/cocoapods/v/KSGuaidView.svg?style=flat)
 ![Platform info](http://img.shields.io/cocoapods/p/KSGuaidView.svg?style=flat)
 ***
-## Summary
+## 简介
 
-KSGuaidView is the tool to display new features when APP is first installed or updated.
+KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工具。
 <br/>
 
 ![图一](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143315.gif)
 ![图二](https://github.com/iCloudys/KSGuaidView/blob/master/Gif/QQ20170531-143634.gif)<br/><br/>
 
 
-## Installation
+## CocoaPods
+通过CocoaPods集成
 
     pod 'KSGuaidView'      
 
-## Usage
-Style 1:
+## 使用方法
+方式一:
 
-    #import <KSGuaidViewManager.h>
+    #include <KSGuaidViewManager.h>
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {                  
         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
                                     [UIImage imageNamed:@"guid02"],
@@ -36,9 +37,9 @@ Style 1:
         return YES;
     }
 
-Style 2:
+方式二:
 
-    #import <KSGuaidViewManager.h>
+    #include <KSGuaidViewManager.h>
  
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
@@ -53,10 +54,10 @@ Style 2:
     }        
         
 ***
-## Attention
-* You should set  up``` KSGuaidManager.images ``` .<br/>
-* Style 1 will ignore if you set up ``` KSGuaidManager.shouldDismissWhenDragging = YES ``` .<br/>
-* You should set up```KSGuaidManager.dismissButtonImage``` if you didn\`t set up ```KSGuaidManager.shouldDismissWhenDragging ``` or ```KSGuaidManager.shouldDismissWhenDragging = NO``` .<br/>
-* Finally you need to call```[KSGuaidManager begin]```.
+## 注意事项
+* 必须设置 ``` KSGuaidManager.images ``` 图片.<br/>
+* 如果设置 ``` KSGuaidManager.shouldDismissWhenDragging = YES ``` 则方式一会忽略.<br/>
+* 如果没有设置 ```KSGuaidManager.shouldDismissWhenDragging ```或者 ``` KSGuaidManager.shouldDismissWhenDragging = NO``` 则需要设置```KSGuaidManager.dismissButtonImage```<br/>
+* 最后需要调用```[KSGuaidManager begin]```才可以生效
 
 

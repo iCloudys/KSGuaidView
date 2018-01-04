@@ -11,6 +11,7 @@
 		0401CDC81FFDC147006F6793 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0401CDC51FFDC146006F6793 /* LICENSE */; };
 		0401CDC91FFDC147006F6793 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0401CDC61FFDC146006F6793 /* README.md */; };
 		0401CDCA1FFDC147006F6793 /* KSGuaidView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0401CDC71FFDC146006F6793 /* KSGuaidView.podspec */; };
+		0401CDCC1FFDDE8E006F6793 /* README_CN.md in Resources */ = {isa = PBXBuildFile; fileRef = 0401CDCB1FFDDE8E006F6793 /* README_CN.md */; };
 		2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */; };
 		2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */; };
 		2CC324981ED55C53006EC91E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC324971ED55C53006EC91E /* main.m */; };
@@ -29,6 +30,7 @@
 		0401CDC51FFDC146006F6793 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		0401CDC61FFDC146006F6793 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0401CDC71FFDC146006F6793 /* KSGuaidView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = KSGuaidView.podspec; path = ../KSGuaidView.podspec; sourceTree = "<group>"; };
+		0401CDCB1FFDDE8E006F6793 /* README_CN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README_CN.md; path = ../README_CN.md; sourceTree = "<group>"; };
 		2C98A47B1EDE9C39003E5A32 /* QQ20170531-143315.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143315.gif"; sourceTree = "<group>"; };
 		2C98A47C1EDE9C39003E5A32 /* QQ20170531-143634.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "QQ20170531-143634.gif"; sourceTree = "<group>"; };
 		2CC324931ED55C53006EC91E /* KSGuaidViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSGuaidViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				0401CDC71FFDC146006F6793 /* KSGuaidView.podspec */,
 				0401CDC51FFDC146006F6793 /* LICENSE */,
 				0401CDC61FFDC146006F6793 /* README.md */,
+				0401CDCB1FFDDE8E006F6793 /* README_CN.md */,
 				2C98A47A1EDE9C39003E5A32 /* Gif */,
 				2CC324AD1ED55C96006EC91E /* KSGuaidView */,
 				2CC324951ED55C53006EC91E /* KSGuaidViewDemo */,
@@ -190,6 +193,7 @@
 				2CC324A61ED55C53006EC91E /* LaunchScreen.storyboard in Resources */,
 				0401CDCA1FFDC147006F6793 /* KSGuaidView.podspec in Resources */,
 				2CC324A31ED55C53006EC91E /* Assets.xcassets in Resources */,
+				0401CDCC1FFDDE8E006F6793 /* README_CN.md in Resources */,
 				0401CDC91FFDC147006F6793 /* README.md in Resources */,
 				2C98A47D1EDE9C39003E5A32 /* QQ20170531-143315.gif in Resources */,
 				2C98A47E1EDE9C39003E5A32 /* QQ20170531-143634.gif in Resources */,
