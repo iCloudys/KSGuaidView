@@ -32,6 +32,14 @@ static dispatch_once_t _onceToken;
 
 - (void)begin{
     
+    NSAssert(self.images && self.images.count != 0, @"Please set images for KSGuaidManager");
+    
+    NSAssert(self.shouldDismissWhenDragging || self.dismissButtonImage , @"You should set dismissButtonImage when shouldDismissWhenDragging is NO");
+    
+    if (CGPointEqualToPoint(CGPointZero, self.dismissButtonCenter)) {
+        KSLog(@"[DEBUG] Waring: Suggested setting KSGuaidManager.dismissButtonCenter values.");
+    }
+    
     if ([current_version() compare:prev_version()] == NSOrderedDescending) {
     
         _window = [[UIWindow alloc] init];
@@ -73,6 +81,10 @@ static dispatch_once_t _onceToken;
     _images = nil;
     _manager = nil;
     _onceToken = 0l;
+}
+
+- (void)dealloc{
+    KSLog(@"[DEBUG] delloc:%@",self);
 }
 
 NS_INLINE

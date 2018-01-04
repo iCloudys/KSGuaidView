@@ -9,7 +9,15 @@
 #import <Foundation/NSObject.h>
 #import <UIKit/UIWindow.h>
 
+#ifndef KSGuaidManager
 #define KSGuaidManager [KSGuaidViewManager manager]
+#endif
+
+#if DEBUG
+#define KSLog(...) NSLog(__VA_ARGS__)
+#else
+#define KSLog(...)
+#endif
 
 @interface KSGuaidViewManager : NSObject
 
@@ -17,6 +25,9 @@
 
 @property (nonatomic, strong ) NSArray<UIImage*>* images;
 
+/**
+ Default is NO.
+ */
 @property (nonatomic, assign) BOOL shouldDismissWhenDragging;
 
 @property (nonatomic, strong) UIImage* dismissButtonImage;

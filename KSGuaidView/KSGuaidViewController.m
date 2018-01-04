@@ -58,7 +58,6 @@ UICollectionViewDelegateFlowLayout>
     [self.view addSubview:self.pageControl];
     
     if (KSGuaidManager.shouldDismissWhenDragging == NO) {
-        NSAssert(KSGuaidManager.dismissButtonImage, @"[KSGuaidViewManager manager].dismissButtonImage can not be nil when [KSGuaidViewManager manager].shouldDismissWhenDragging is NO ");
         
         self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.dismissButton.hidden = YES;
@@ -155,9 +154,7 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)dealloc{
-#if DEBUG
-    NSLog(@"[DEBUG] dealloc:%@",self);
-#endif
+    KSLog(@"[DEBUG] delloc:%@",self);
 }
 
 @end
