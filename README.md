@@ -1,5 +1,8 @@
+# KSGuaidView
+![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+![Pod version](http://img.shields.io/cocoapods/v/HHHorizontalPagingView.svg?style=flat)
+![Platform info](http://img.shields.io/cocoapods/p/HHHorizontalPagingView.svg?style=flat)
 ***
-
 ## 简介
 
 KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工具。
