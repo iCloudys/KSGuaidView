@@ -19,27 +19,12 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
 
 ## 使用方法
 方式一
-    ```
-    #include <KSGuaidViewManager.h>
- 
-     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
-                                    [UIImage imageNamed:@"guid02"],
-                                    [UIImage imageNamed:@"guid03"],
-                                    [UIImage imageNamed:@"guid04"]];
-    
-        CGSize size = [UIScreen mainScreen].bounds.size;
-        KSGuaidManager.dismissButtonCenter = CGPointMake(size.width / 2, size.height - 80);
 
-        KSGuaidManager.dismissButtonImage = [UIImage imageNamed:@"hidden"];
-     
-        [KSGuaidManager begin];
-    
+    #include <KSGuaidViewManager.h>
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         return YES;
+    }
     
-    }
-    ```
 方式二:
 
     #include <KSGuaidViewManager.h>
