@@ -1,7 +1,7 @@
 # KSGuaidView
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
-![Pod version](http://img.shields.io/cocoapods/v/HHHorizontalPagingView.svg?style=flat)
-![Platform info](http://img.shields.io/cocoapods/p/HHHorizontalPagingView.svg?style=flat)
+![Pod version](http://img.shields.io/cocoapods/v/KSGuaidView.svg?style=flat)
+![Platform info](http://img.shields.io/cocoapods/p/KSGuaidView.svg?style=flat)
 ***
 ## 简介
 
