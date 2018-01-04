@@ -50,6 +50,9 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
 
 ***
 ## 注意事项
+##
+## 注意事项#
+## 注意事项
 ·必须设置 ``` KSGuaidManager.images ``` 图片.<br/>
 ·如果设置 ``` KSGuaidManager.shouldDismissWhenDragging = YES ``` 则方式一会忽略.<br/>
 ·如果没有设置 ```KSGuaidManager.shouldDismissWhenDragging ```或者 ``` KSGuaidManager.shouldDismissWhenDragging = NO``` 则需要设置```KSGuaidManager.dismissButtonImage```<br/>
