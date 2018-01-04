@@ -18,7 +18,7 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
     pod 'KSGuaidView'      
 
 ## 使用方法
-方式一
+方式一:
 
     #include <KSGuaidViewManager.h>
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {                  
@@ -36,7 +36,7 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
         
         return YES;
     }
-        
+
 方式二:
 
     #include <KSGuaidViewManager.h>
