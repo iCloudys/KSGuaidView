@@ -1,4 +1,4 @@
-# KSGuaidView([中文版](https://www.baidu.com))
+# KSGuaidView([中文版](/README_CN.md))
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 ![Pod version](http://img.shields.io/cocoapods/v/KSGuaidView.svg?style=flat)
 ![Platform info](http://img.shields.io/cocoapods/p/KSGuaidView.svg?style=flat)
