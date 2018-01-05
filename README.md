@@ -57,9 +57,9 @@ Style 2:
 
 ***
 ## Attention
-* You should set  up```objective-c KSGuaidManager.images ``` .<br/>
-* Style 1 will ignore if you set up ```objective-c KSGuaidManager.shouldDismissWhenDragging = YES ``` .<br/>
-* You should set up```objective-c KSGuaidManager.dismissButtonImage``` if you didn\`t set up ```objective-c KSGuaidManager.shouldDismissWhenDragging ``` or ```objective-c KSGuaidManager.shouldDismissWhenDragging = NO``` .<br/>
-* Finally you need to call```objective-c [KSGuaidManager begin]```.
+* You should set  up```KSGuaidManager.images ``` .<br/>
+* Style 1 will ignore if you set up ```KSGuaidManager.shouldDismissWhenDragging = YES ``` .<br/>
+* You should set up```KSGuaidManager.dismissButtonImage``` if you didn\`t set up ```KSGuaidManager.shouldDismissWhenDragging ``` or ``` KSGuaidManager.shouldDismissWhenDragging = NO``` .<br/>
+* Finally you need to call``` [KSGuaidManager begin]```.
 
 
