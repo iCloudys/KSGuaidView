@@ -18,7 +18,7 @@ KSGuaidView is the tool to display new features when APP is first installed or u
 
 ## Usage
 Style 1:
-
+```objective-c
     #import <KSGuaidViewManager.h>
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {                  
         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
@@ -34,9 +34,11 @@ Style 1:
         [KSGuaidManager begin];
         
         return YES;
-    }
-
+    }
+```
 Style 2:
+
+```objective-c
 
     #import <KSGuaidViewManager.h>
  
@@ -50,8 +52,9 @@ Style 2:
         [KSGuaidManager begin];
         
         return YES;
-    }        
-        
+    }   
+```
+
 ***
 ## Attention
 * You should set  up``` KSGuaidManager.images ``` .<br/>
