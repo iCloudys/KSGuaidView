@@ -19,8 +19,8 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
 
 ## 使用方法
 方式一:
-
-    #include <KSGuaidViewManager.h>
+```objective-c
+    #include <KSGuaidViewManager.h>
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {                  
         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
                                     [UIImage imageNamed:@"guid02"],
@@ -35,11 +35,11 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
         [KSGuaidManager begin];
         
         return YES;
-    }
-
+    }
+```
 方式二:
-
-    #include <KSGuaidViewManager.h>
+```objective-c
+    #include <KSGuaidViewManager.h>
  
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
         KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
@@ -51,8 +51,8 @@ KSGuaidView是APP初次安装或者版本更新时候用了展示新特性的工
         [KSGuaidManager begin];
         
         return YES;
-    }        
-        
+    }        
+```
 ***
 ## 注意事项
 * 必须设置 ``` KSGuaidManager.images ``` 图片.<br/>
