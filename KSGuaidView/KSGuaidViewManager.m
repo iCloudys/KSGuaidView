@@ -10,7 +10,14 @@
 #import <objc/runtime.h>
 #import "KSGuaidViewController.h"
 
-static NSString* const CFBundleVersion = @"CFBundleVersion";
+static NSString* const CFBundleVersion =
+@"CFBundleVersion";
+static NSString* const SETIMAGEASSERTSTRING =
+@"Please set images for KSGuaidManager";
+static NSString* const SETDISMISSBUTTONIMAGEASSERTSTRING =
+@"You should set dismissButtonImage when shouldDismissWhenDragging is NO";
+static NSString* const SETDISMISSBUTTONCENTERASSERTSTRING =
+@"[DEBUG] Waring: Suggested setting KSGuaidManager.dismissButtonCenter values.";
 
 @implementation KSGuaidViewManager
 
@@ -23,21 +30,17 @@ static dispatch_once_t _onceToken;
     });
     return _manager;
 }
-+ (instancetype)allocWithZone:(struct _NSZone *)zone{
-    return _manager;
-}
-- (id)copyWithZone:(NSZone *)zone{
-    return _manager;
-}
++ (instancetype)allocWithZone:(struct _NSZone *)zone{return _manager;}
+- (id)copyWithZone:(NSZone *)zone{return _manager;}
 
 - (void)begin{
     
-    NSAssert(self.images && self.images.count != 0, @"Please set images for KSGuaidManager");
+    NSAssert(self.images && self.images.count != 0, SETIMAGEASSERTSTRING);
     
-    NSAssert(self.shouldDismissWhenDragging || self.dismissButtonImage , @"You should set dismissButtonImage when shouldDismissWhenDragging is NO");
+    NSAssert(self.shouldDismissWhenDragging || self.dismissButtonImage , SETDISMISSBUTTONIMAGEASSERTSTRING);
     
-    if (CGPointEqualToPoint(CGPointZero, self.dismissButtonCenter)) {
-        KSLog(@"[DEBUG] Waring: Suggested setting KSGuaidManager.dismissButtonCenter values.");
+    if (self.shouldDismissWhenDragging == NO && CGPointEqualToPoint(CGPointZero, self.dismissButtonCenter)) {
+        KSLog(SETDISMISSBUTTONCENTERASSERTSTRING);
     }
     
     if ([current_version() compare:prev_version()] == NSOrderedDescending) {

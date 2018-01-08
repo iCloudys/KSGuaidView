@@ -38,6 +38,11 @@
 
 @property (nonatomic, strong) UIColor* currentPageIndicatorTintColor;
 
+/**
+ Default UIInterfaceOrientationMaskPortrait
+ */
+@property (nonatomic, assign) UIInterfaceOrientationMask supportedInterfaceOrientation;
+
 + (instancetype)manager;
 
 - (void)begin;

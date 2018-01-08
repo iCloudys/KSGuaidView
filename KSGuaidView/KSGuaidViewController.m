@@ -45,6 +45,9 @@ UICollectionViewDelegateFlowLayout>
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.backgroundColor = self.view.backgroundColor;
+    if (@available(*,iOS 11)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     [self.collectionView registerClass:[KSGuaidViewCell class] forCellWithReuseIdentifier:KSGuaidViewCellID];
     
     [self.view addSubview:self.collectionView];
@@ -116,6 +119,16 @@ UICollectionViewDelegateFlowLayout>
     return collectionView.bounds.size;
 }
 
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 0;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return 0;
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsZero;
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     long current = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
@@ -129,7 +142,7 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
+    return KSGuaidManager.supportedInterfaceOrientation;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
