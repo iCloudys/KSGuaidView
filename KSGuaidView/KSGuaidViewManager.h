@@ -24,6 +24,7 @@
 @property (nonatomic, strong, readonly) UIWindow* window;
 
 @property (nonatomic, strong ) NSArray<UIImage*>* images;
+@property (nonatomic,strong)   NSArray<NSString*>* imageUrlArray;
 
 /**
  Default is NO.
@@ -46,5 +47,6 @@
 + (instancetype)manager;
 
 - (void)begin;
-
+-(bool)compareVersion;
+-(void)showImageView;
 @end
