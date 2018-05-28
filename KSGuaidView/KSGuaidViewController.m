@@ -9,7 +9,8 @@
 #import "KSGuaidViewController.h"
 #import "KSGuaidViewCell.h"
 #import "KSGuaidViewManager.h"
-
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
 @interface KSGuaidViewController ()<
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout>
@@ -63,11 +64,19 @@ UICollectionViewDelegateFlowLayout>
     if (KSGuaidManager.shouldDismissWhenDragging == NO) {
         
         self.dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+          [self.view addSubview:self.dismissButton];
+        self.dismissButton.backgroundColor =[UIColor lightGrayColor];
         self.dismissButton.hidden = YES;
-        [self.dismissButton setImage:KSGuaidManager.dismissButtonImage forState:UIControlStateNormal];
+        [self.dismissButton setTitleColor:[UIColor blackColor] forState:0];
+//        [self.dismissButton setImage:KSGuaidManager.dismissButtonImage forState:UIControlStateNormal];
+        [self.dismissButton setTitle:@"立即体验" forState:0];
         [self.dismissButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
         [self.dismissButton sizeToFit];
-        [self.view addSubview:self.dismissButton];
+        [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.width.mas_equalTo(150);
+            make.height.mas_equalTo(44);
+        }];
         
     }
 }
@@ -83,7 +92,7 @@ UICollectionViewDelegateFlowLayout>
                                         CGRectGetHeight(self.view.frame) - size.height,
                                         size.width, size.height);
     
-    self.dismissButton.center = KSGuaidManager.dismissButtonCenter;
+//    self.dismissButton.center = KSGuaidManager.dismissButtonCenter;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -107,7 +116,13 @@ UICollectionViewDelegateFlowLayout>
         cell.imageView.image = nil;
         
     }else{
-       
+        
+        
+        if (KSGuaidManager.imageUrlArray) {
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:KSGuaidManager.imageUrlArray[indexPath.row]]];
+        }
+        else
+            
         cell.imageView.image = KSGuaidManager.images[indexPath.row];
         
     }

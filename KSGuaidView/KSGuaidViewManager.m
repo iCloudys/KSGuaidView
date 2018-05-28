@@ -43,31 +43,9 @@ static dispatch_once_t _onceToken;
         KSLog(SETDISMISSBUTTONCENTERASSERTSTRING);
     }
     
-    if ([current_version() compare:prev_version()] == NSOrderedDescending) {
+    if ([self compareVersion]) {
     
-        _window = [[UIWindow alloc] init];
-        
-        _window.frame = [UIScreen mainScreen].bounds;
-        
-        _window.backgroundColor = [UIColor clearColor];
-        
-        _window.windowLevel = UIWindowLevelStatusBar;
-        
-        [_window makeKeyAndVisible];
-        
-        
-        KSGuaidViewController* vc = [[KSGuaidViewController alloc] init];
-        
-        __weak typeof(self) weakSelf = self;
-        
-        vc.willDismissHandler = ^{
-            
-            save_current_version();
-
-            [weakSelf end];
-        };
-        
-        _window.rootViewController = vc;
+        [self showImageView];
         
     }else{
 
@@ -76,7 +54,42 @@ static dispatch_once_t _onceToken;
     }
 
 }
-
+-(void)showImageView
+{
+    _window = [[UIWindow alloc] init];
+    
+    _window.frame = [UIScreen mainScreen].bounds;
+    
+    _window.backgroundColor = [UIColor clearColor];
+    
+    _window.windowLevel = UIWindowLevelStatusBar;
+    
+    [_window makeKeyAndVisible];
+    
+    
+    KSGuaidViewController* vc = [[KSGuaidViewController alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    vc.willDismissHandler = ^{
+        
+        save_current_version();
+        
+        [weakSelf end];
+    };
+    
+    _window.rootViewController = vc;
+}
+-(bool)compareVersion
+{
+    if ([current_version() compare:prev_version()] == NSOrderedDescending)
+    {
+        return YES;
+        
+    }
+    else
+        return NO;
+}
 - (void)end{
     
     _window.hidden = YES;
